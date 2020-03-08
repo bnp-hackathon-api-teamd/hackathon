@@ -47,7 +47,11 @@ public class EmployeeController implements EmployeeControllerAPI {
 	@Override
 	@PostMapping("/employees")
 	public ResponseEntity<Employee> createEmployee(@Valid @RequestBody Employee employee) {
-		return ResponseEntity.ok(employeeRepository.save(employee));
+		Employee employeeEntity = new Employee();
+		employeeEntity.setFirstName(employee.getFirstName());
+		employeeEntity.setLastName(employee.getLastName());
+		employeeEntity.setEmailId(employee.getEmailId());
+		return ResponseEntity.ok(employeeRepository.save(employeeEntity));
 	}
 
 	@Override

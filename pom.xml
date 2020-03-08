@@ -12,6 +12,13 @@
 	<name>global</name>
 	<description>Global POM for the API Hackathon Modules</description>
 
+	<properties>
+	  <sonar.projectKey>cgrosso80_hackathon</sonar.projectKey>
+	  <sonar.organization>cgrosso80</sonar.organization>
+	  <sonar.host.url>https://sonarcloud.io</sonar.host.url>
+	  <sonar.login>bb9faa77c6fb23fbde8ea429b0656480a386c7dd</sonar.login>
+	</properties>
+
 	<modules>
 		<module>commons</module>
 		<module>employee_manager</module>
@@ -19,4 +26,21 @@
 		<module>find_my_spot</module>
 	</modules>
 
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.sonarsource.scanner.maven</groupId>
+				<artifactId>sonar-maven-plugin</artifactId>
+				<version>3.4.0.905</version>
+				<executions>
+					<execution>
+						<phase>verify</phase>
+						<goals>
+							<goal>sonar</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
 </project>
