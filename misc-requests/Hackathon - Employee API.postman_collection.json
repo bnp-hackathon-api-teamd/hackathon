@@ -6,17 +6,39 @@
 	},
 	"item": [
 		{
+			"name": "Get Employees - APIgee",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://apigee-proxy/applicationname/api/v1/employees",
+					"protocol": "https",
+					"host": [
+						"apigee-proxy"
+					],
+					"path": [
+						"applicationname",
+						"api",
+						"v1",
+						"employees"
+					]
+				}
+			},
+			"response": []
+		},
+		{
 			"name": "Get Employees",
 			"request": {
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8080/employee/api/v1/employees",
-					"protocol": "http",
+					"raw": "https://employeeapplicationname.herokuapp.com/employee/api/v1/employees",
+					"protocol": "https",
 					"host": [
-						"localhost"
+						"employeeapplicationname",
+						"herokuapp",
+						"com"
 					],
-					"port": "8080",
 					"path": [
 						"employee",
 						"api",
@@ -33,12 +55,13 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8080/employee/api/v1/employees/1",
-					"protocol": "http",
+					"raw": "https://employeeapplicationname.herokuapp.com/employee/api/v1/employees/1",
+					"protocol": "https",
 					"host": [
-						"localhost"
+						"employeeapplicationname",
+						"herokuapp",
+						"com"
 					],
-					"port": "8080",
 					"path": [
 						"employee",
 						"api",
@@ -72,12 +95,13 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:8080/employee/api/v1/employees/1",
-					"protocol": "http",
+					"raw": "https://employeeapplicationname.herokuapp.com/employee/api/v1/employees/1",
+					"protocol": "https",
 					"host": [
-						"localhost"
+						"employeeapplicationname",
+						"herokuapp",
+						"com"
 					],
-					"port": "8080",
 					"path": [
 						"employee",
 						"api",
@@ -111,12 +135,11 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:8080/employee/api/v1/employees/1",
+					"raw": "http://employeeapplicationname/employee/api/v1/employees/1",
 					"protocol": "http",
 					"host": [
-						"localhost"
+						"employeeapplicationname"
 					],
-					"port": "8080",
 					"path": [
 						"employee",
 						"api",
@@ -144,12 +167,13 @@
 					"raw": "{\n\"firstName\": \"Carlos\",\n\"lastName\": \"Correia\",\n\"emailId\": \"mymail@gmail.com\"\n}"
 				},
 				"url": {
-					"raw": "http://localhost:8080/employee/api/v1/employees",
-					"protocol": "http",
+					"raw": "https://employeeapplicationname.herokuapp.com/employee/api/v1/employees",
+					"protocol": "https",
 					"host": [
-						"localhost"
+						"employeeapplicationname",
+						"herokuapp",
+						"com"
 					],
-					"port": "8080",
 					"path": [
 						"employee",
 						"api",
