@@ -9,5 +9,5 @@ import com.bnpparibas.hackathon.parking.api.controller.ParkingControllerAPI;
 @RequestMapping("/api/v1")
 public abstract class ParkingController implements ParkingControllerAPI{
 
-	//TODO Remove abstract keyword and implement methods
+	//TODO Remove abstract keyword and implement relevant methods
 }

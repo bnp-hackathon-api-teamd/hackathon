@@ -4,19 +4,16 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-	<groupId>com.bnpparibas.hackathon.api</groupId>
 	<artifactId>employee-manager</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
 	<name>employee-manager</name>
 	<description>Base project employee CRUD with an InMemDB (H2) to be used in Hackathon exercise</description>
 
 	<parent>
-		<groupId>org.springframework.boot</groupId>
-		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>2.1.2.RELEASE</version>
-		<relativePath />
+		<groupId>com.bnpparibas.hackathon.api</groupId>
+		<artifactId>global</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
 	</parent>
 
 	<properties>
@@ -29,7 +26,7 @@
 		<dependency>
 			<groupId>com.bnpparibas.hackathon.api</groupId>
 			<artifactId>commons</artifactId>
-			<version>0.0.1-SNAPSHOT</version>
+			<version>${project.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -97,5 +94,43 @@
 		</plugins>
 	</build>
 
-
+	<profiles>
+		<profile>
+			<id>heroku</id>
+			<activation>
+				<property>
+					<name>heroku</name>
+				</property>
+			</activation>
+			<build>
+				<plugins>
+					<plugin>
+						<groupId>com.heroku.sdk</groupId>
+						<artifactId>heroku-maven-plugin</artifactId>
+						<version>2.0.6</version>
+						<configuration>
+							<appName>${heroku.employee.applicationName}</appName>
+							<includeTarget>false</includeTarget>
+							<includes>
+								<include>${project.build.directory}/${project.artifactId}-${project.version}.jar</include>
+							</includes>
+							<jdkVersion>1.8</jdkVersion>
+							<processTypes>
+								<web>java -jar
+									target/${project.artifactId}-${project.version}.jar $JAR_OPTS</web>
+							</processTypes>
+						</configuration>
+						<executions>
+							<execution>
+								<phase>verify</phase>
+								<goals>
+									<goal>deploy</goal>
+								</goals>
+							</execution>
+						</executions>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+	</profiles>
 </project>
