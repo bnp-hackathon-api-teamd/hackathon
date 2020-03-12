@@ -23,12 +23,12 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<java.version>1.8</java.version>
-		<sonar.projectKey>cgrosso80_hackathon</sonar.projectKey>
-		<sonar.organization>cgrosso80</sonar.organization>
+		<sonar.projectKey>#SONAR.PROJECTKEY#</sonar.projectKey>
+		<sonar.organization>#SONAR.ORGANIZATION#</sonar.organization>
 		<sonar.host.url>https://sonarcloud.io</sonar.host.url>
-		<sonar.login>bb9faa77c6fb23fbde8ea429b0656480a386c7dd</sonar.login>
-		<heroku.employee.applicationName>hackathon-employee-api</heroku.employee.applicationName>
-		<heroku.parking.applicationName>hackathon-parking-api</heroku.parking.applicationName>
+		<sonar.login>#SONAR.LOGINTOKEN#</sonar.login>
+		<heroku.employee.applicationName>#HEROKU_EMPLOYEE_APPLICATION#</heroku.employee.applicationName>
+		<heroku.parking.applicationName>#HEROKU_PARKING_APPLICATION#</heroku.parking.applicationName>
 	</properties>
 
 	<modules>
