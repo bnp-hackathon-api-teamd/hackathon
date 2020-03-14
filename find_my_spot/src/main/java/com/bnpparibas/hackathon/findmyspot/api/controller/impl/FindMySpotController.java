@@ -4,6 +4,7 @@ import com.bnpparibas.hackathon.findmyspot.api.controller.FindMySpotControllerAP
 import com.bnpparibas.hackathon.findmyspot.api.service.FindMySpotService;
 import com.bnpparibas.hackathon.findmyspot.api.service.FindMySpotValidator;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -25,13 +26,11 @@ public class FindMySpotController implements FindMySpotControllerAPI {
         if(!validator.existsEmployee(employeeId)){
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
-
         if(!validator.employeeIsInSpot(employeeId)){
             return new ResponseEntity<>(HttpStatus.CONFLICT);
         }
-
-
-        return null;
+        service.leavePark(employeeId);
+        return new ResponseEntity<>(HttpStatus.OK);
     }
 
     @Override
@@ -40,6 +39,7 @@ public class FindMySpotController implements FindMySpotControllerAPI {
         if(!validator.existsEmployee(employeeId)){
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
+
         return null;
     }
 
