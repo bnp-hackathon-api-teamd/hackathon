@@ -1,6 +1,6 @@
-package com.bnpparibas.hackathon.findmyspot.api.controller.impl;
+package com.bnpparibas.hackathon.employee.api.controller.impl;
 
-import com.bnpparibas.hackathon.findmyspot.api.controller.TimestampControllerAPI;
+import com.bnpparibas.hackathon.employee.api.controller.TimestampControllerAPI;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
