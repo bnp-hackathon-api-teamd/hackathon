@@ -1,4 +1,4 @@
-package com.bnpparibas.hackathon.findmyspot.api.controller;
+package com.bnpparibas.hackathon.employee.api.controller;
 
 public interface TimestampControllerAPI {
 
