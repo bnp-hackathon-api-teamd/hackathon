@@ -11,7 +11,7 @@ import java.util.Map;
 public class FindMySpotService {
     private final RestTemplate restTemplate;
 
-    public void leavePark(Long employeeId) {
+    public void leavePark(Long employeeId, Long parkId) {
 
         String uriParkSlot ="";
         ResponseEntity<Map> retorno = restTemplate.getForEntity(uriParkSlot, Map.class);
