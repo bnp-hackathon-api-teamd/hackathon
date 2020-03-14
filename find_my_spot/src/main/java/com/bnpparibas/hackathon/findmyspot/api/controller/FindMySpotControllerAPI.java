@@ -1,5 +1,7 @@
 package com.bnpparibas.hackathon.findmyspot.api.controller;
 
+import org.springframework.http.ResponseEntity;
+
 public interface FindMySpotControllerAPI {
 
 	/*TODO Create API that answers to the following needs:
@@ -8,5 +10,9 @@ public interface FindMySpotControllerAPI {
 	 *  - When the user enters in the building it marks the parking lot as occupied
 	 *  - When the user leaves the building it marks the parking lot as free 
 	 */
+
+
+	public ResponseEntity<?> leave(Long employeeId);
+	public ResponseEntity<?> enter(Long employeeId);
 
 }
