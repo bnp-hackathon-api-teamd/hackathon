@@ -1,6 +1,7 @@
 package com.bnpparibas.hackathon.findmyspot.api.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
@@ -12,10 +13,7 @@ public class FindMySpotValidator {
 	
     public boolean existsEmployee(Long employeeId) {
     	ResponseEntity<Employee> employee = template.getForEntity("http://localhost:8080/employee/api/v1/employees/"+employeeId, Employee.class);
-    	if(employee != null) {
-    		return true;	
-    	}
-    	return false;
+        return HttpStatus.OK.equals(employee.getStatusCode()) && employee.hasBody();
     }
 
     public boolean employeeIsInSpot(Long employeeId) {
