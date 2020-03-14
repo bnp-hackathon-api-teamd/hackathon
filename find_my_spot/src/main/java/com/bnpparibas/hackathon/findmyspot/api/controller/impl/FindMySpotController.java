@@ -4,7 +4,6 @@ import com.bnpparibas.hackathon.findmyspot.api.controller.FindMySpotControllerAP
 import com.bnpparibas.hackathon.findmyspot.api.service.FindMySpotService;
 import com.bnpparibas.hackathon.findmyspot.api.service.FindMySpotValidator;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -21,26 +20,29 @@ public class FindMySpotController implements FindMySpotControllerAPI {
      */
 
     @Override
-    @PostMapping("/leave/{employeeId}")
-    public ResponseEntity<?> leave(Long employeeId) {
+    @PostMapping("/leave/{employeeId}/{parkId}")
+    public ResponseEntity<?> leave(Long employeeId,Long parkId) {
         if(!validator.existsEmployee(employeeId)){
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
         if(!validator.employeeIsInSpot(employeeId)){
             return new ResponseEntity<>(HttpStatus.CONFLICT);
         }
-        service.leavePark(employeeId);
+        service.leavePark(employeeId,parkId);
         return new ResponseEntity<>(HttpStatus.OK);
     }
 
     @Override
-    @PostMapping("/enter/{employeeId}")
-    public ResponseEntity<?> enter(Long employeeId) {
+    @PostMapping("/enter/{employeeId}/{parkId}")
+    public ResponseEntity<?> enter(Long employeeId,Long parkId) {
         if(!validator.existsEmployee(employeeId)){
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
-
-        return null;
+        if(validator.employeeIsInSpot(employeeId)){
+            return new ResponseEntity<>(HttpStatus.CONFLICT);
+        }
+        service.enterPark(employeeId,parkId);
+        return new ResponseEntity<>(HttpStatus.OK);
     }
 
     @Autowired

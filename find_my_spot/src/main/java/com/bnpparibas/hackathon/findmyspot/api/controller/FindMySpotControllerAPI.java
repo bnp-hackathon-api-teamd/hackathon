@@ -12,7 +12,7 @@ public interface FindMySpotControllerAPI {
 	 */
 
 
-	public ResponseEntity<?> leave(Long employeeId);
-	public ResponseEntity<?> enter(Long employeeId);
+	public ResponseEntity<?> leave(Long employeeId,Long parkId);
+	public ResponseEntity<?> enter(Long employeeId,Long parkId);
 
 }

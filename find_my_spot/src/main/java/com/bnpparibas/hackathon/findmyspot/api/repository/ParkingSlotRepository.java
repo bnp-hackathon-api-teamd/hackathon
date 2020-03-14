@@ -12,4 +12,7 @@ import java.util.Optional;
 public interface ParkingSlotRepository extends JpaRepository<ParkingSlot, Long> {
     @Query("Select P from ParkingSlot P where P.employeeId = :employeeId")
     Optional<ParkingSlot> findByEmployeeId(@Param("employeeId") Long employeeId);
+
+    @Query("Select P from ParkingSlot P where P.employeeId = :employeeId and parkId = :parkId ")
+    Optional<ParkingSlot> findByEmployeeIdAndParkId(Long employeeId, Long parkId);
 }
