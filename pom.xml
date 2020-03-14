@@ -23,12 +23,12 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<java.version>1.8</java.version>
-		<sonar.projectKey>#SONAR.PROJECTKEY#</sonar.projectKey>
-		<sonar.organization>#SONAR.ORGANIZATION#</sonar.organization>
+		<sonar.projectKey>bnp-hackathon-api-teamd</sonar.projectKey>
+		<sonar.organization>bnp-hackathon-api-teamd</sonar.organization>
 		<sonar.host.url>https://sonarcloud.io</sonar.host.url>
-		<sonar.login>#SONAR.LOGINTOKEN#</sonar.login>
-		<heroku.employee.applicationName>#HEROKU_EMPLOYEE_APPLICATION#</heroku.employee.applicationName>
-		<heroku.parking.applicationName>#HEROKU_PARKING_APPLICATION#</heroku.parking.applicationName>
+		<sonar.login>81e5cb1133729fafeeed5d1c2f582a9b8f7920b3</sonar.login>
+		<heroku.employee.applicationName>bnp-hackathon-employee-api-ted</heroku.employee.applicationName>
+		<heroku.parking.applicationName>bnp-hackathon-parking-api-ted</heroku.parking.applicationName>
 	</properties>
 
 	<modules>
